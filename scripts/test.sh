@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PORT="${PORT:?PORT environment variable is required}"
-
 passed=0
 total=3
 
