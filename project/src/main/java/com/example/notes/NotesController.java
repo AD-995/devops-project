@@ -14,16 +14,16 @@ public class NotesController {
     }
 
     @GetMapping("/healthz")
-    public int health() {
-        return 200;
+    public String health() {
+        return "OK";
     }
 
     @GetMapping("/notes")
     public List<String> notes() {
         return List.of(
-            "Task 1",
-            "Task 2",
-            "Task 3"
+            "Note 1",
+            "Note 2",
+            "Note 3"
         );
     }
 }
