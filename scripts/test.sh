@@ -4,7 +4,7 @@ set -euo pipefail
 passed=0
 total=3
 
-BASE_URL="http://localhost:${PORT}"
+BASE_URL="http://localhost:8080"
 
 # Test /
 if [ "$(curl -s -o /dev/null -w "%{http_code}" "$BASE_URL/")" = "200" ]; then
