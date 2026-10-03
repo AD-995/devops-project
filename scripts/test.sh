@@ -6,7 +6,8 @@ BASE_URL="http://localhost:${PORT}"
 
 cd "$(dirname "$0")/../project"
 
-mvn spring-boot:run
+PORT="$PORT" mvn spring-boot:run &
+APP_PID=$!
 
 # Wait for the application to start
 until curl -s "$BASE_URL/" > /dev/null 2>&1; do
@@ -34,3 +35,5 @@ if [ "$(curl -s -o /dev/null -w "%{http_code}" "$BASE_URL/notes")" = "200" ]; th
 fi
 
 echo "TESTS: $passed/$total"
+
+kill "$APP_PID" 2>/dev/null || true
