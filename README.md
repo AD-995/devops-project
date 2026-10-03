@@ -1,7 +1,5 @@
 # devops-project
 
----
-
 ## What it does:
 
 This simple project has 3 directories - /, /healthz, /notes - which return hard-coded responses.
@@ -16,5 +14,4 @@ You can test it using ./scripts/test.sh in the terminal while the application is
 
 ## Port
 
-Port can be set manually for run, default is 8080
-It is hardcoded for test at 8080 
+Port can be set manually for run or test, default is 8080
