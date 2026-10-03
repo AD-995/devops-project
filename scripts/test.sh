@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+PORT="${PORT:-8080}"
+BASE_URL="http://localhost:${PORT}"
+
+cd "$(dirname "$0")/../project"
+
+mvn spring-boot:run
+
+# Wait for the application to start
+until curl -s "$BASE_URL/" > /dev/null 2>&1; do
+    sleep 1
+done
+
 passed=0
 total=3
 
