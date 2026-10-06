@@ -15,5 +15,3 @@ You can test it using ./scripts/test.sh in the terminal while the application is
 ## Port
 
 Port can be set manually for run or test, default is 8080
-
-test
