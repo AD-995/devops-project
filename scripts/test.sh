@@ -20,7 +20,7 @@ total=3
 BASE_URL="http://localhost:8080"
 
 # Test /
-if [ "$(curl -s -o /dev/null -w "%{http_code}" "$BASE_URL/")" = "201" ]; then
+if [ "$(curl -s -o /dev/null -w "%{http_code}" "$BASE_URL/")" = "200" ]; then
     passed=$((passed + 1))
 fi
 
