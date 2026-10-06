@@ -34,6 +34,13 @@ if [ "$(curl -s -o /dev/null -w "%{http_code}" "$BASE_URL/notes")" = "200" ]; th
     passed=$((passed + 1))
 fi
 
+
 echo "TESTS: $passed/$total"
 
 kill "$APP_PID" 2>/dev/null || true
+
+if [ "$passed" -ne "$total" ]; then
+    exit 1
+fi
+
+exit 0
