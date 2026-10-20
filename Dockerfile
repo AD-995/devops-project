@@ -5,7 +5,7 @@ RUN mvn -q -B dependency:go-offline
 COPY project/src ./src
 RUN mvn -q -B package -DskipTests
 
-FROM eclipse-temurin:25-jre
+FROM eclipse-temurin:25-jre-alpine
 WORKDIR /app
 COPY --from=build /src/target/*.jar /app/app.jar
 ENV PORT=8080
