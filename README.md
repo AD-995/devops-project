@@ -18,7 +18,7 @@ Port can be set manually for run or test, default is 8080
 
 ## Rollback
 
-Argo CD deploys what is on the `main` branch, from the `argocd` folder.
+Argo CD deploys what is on the `main` branch, from the `k8s` folder.
 To roll back, undo the commit that deployed the bad version, with a new commit:
 
     git log --oneline -- -3
